@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowViewLayout Version="1.2">
+  <StrutsActivity path="/personalizedSearch.do" location="50,50" dimension="364,84" />
+  <StrutsActivity path="/anonymousSearch.do" location="60,300" dimension="346,84" />
+  <StrutsActivity path="/test.do" location="120,435" dimension="280,84" />
+  <StrutsActivity path="/anonymousContinueSearch.do" location="735,375" dimension="394,84" />
+  <StrutsActivity path="/footPage.do" location="735,495" dimension="304,84" />
+  <StrutsActivity path="/personalizedSearch.jsp" location="720,30" dimension="178,48" />
+  <StrutsActivity path="/index.jsp" location="150,180" dimension="100,48" />
+  <StrutsActivity path="/personalizedhome.jsp" location="750,105" dimension="166,48" />
+  <StrutsActivity path="/anonymousSearch.jsp" location="510,390" dimension="160,48" />
+  <StrutsActivity path="/anonymoushome.jsp" location="540,255" dimension="148,48" />
+  <StrutsActivity path="/test.jsp" location="345,555" dimension="94,48" />
+  <StrutsActivity path="/searchFooter.jsp" location="480,540" dimension="142,48" />
+  <StrutsActivity path="/anonymousSearch1.jsp" location="50,650" dimension="160,51" />
+  <StrutsTransition id="/footPage.do,sucess,/anonymousSearch.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="735,519" />
+      <AbsolutePoint location="560,519" />
+      <AbsolutePoint location="560,438" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/anonymousSearch.jsp,null,/anonymousContinueSearch.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="590,438" />
+      <AbsolutePoint location="590,495" />
+      <AbsolutePoint location="932,495" />
+      <AbsolutePoint location="932,459" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/personalizedSearch.do,fail,/index.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="232,134" />
+      <AbsolutePoint location="232,180" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/anonymoushome.jsp,null,/anonymousSearch.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="614,303" />
+      <AbsolutePoint location="614,342" />
+      <AbsolutePoint location="406,342" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/test.jsp,null,/test.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="385,555" />
+      <AbsolutePoint location="385,519" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/personalizedSearch.do,success,/personalizedSearch.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="414,63" />
+      <AbsolutePoint location="720,63" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/anonymousSearch.do,success,/anonymousSearch1.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="105,384" />
+      <AbsolutePoint location="105,650" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/searchFooter.jsp,null,/footPage.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="622,564" />
+      <AbsolutePoint location="735,564" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/anonymousContinueSearch.do,success,/anonymousSearch.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="735,417" />
+      <AbsolutePoint location="670,417" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/anonymousSearch.do,success,/anonymousSearch.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="233,384" />
+      <AbsolutePoint location="233,414" />
+      <AbsolutePoint location="510,414" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/personalizedhome.jsp,null,/personalizedSearch.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="750,119" />
+      <AbsolutePoint location="414,119" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/anonymousSearch.do,fail,/index.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="203,300" />
+      <AbsolutePoint location="203,228" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+</FlowViewLayout>
+

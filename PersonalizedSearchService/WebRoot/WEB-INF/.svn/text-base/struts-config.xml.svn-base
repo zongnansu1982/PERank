@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+
+<struts-config>
+  <data-sources />
+  <form-beans >
+    <form-bean name="personalizedSearchForm" type="bike.snu.ac.kr.struts.form.PersonalizedSearchForm" />
+    <form-bean name="anonymousSearchForm" type="bike.snu.ac.kr.struts.form.AnonymousSearchForm" />
+    <form-bean name="testForm" type="bike.snu.ac.kr.struts.form.TestForm" />
+    <form-bean name="anonymousContinueSearchForm" type="bike.snu.ac.kr.struts.form.AnonymousContinueSearchForm" />
+    <form-bean name="footPageForm" type="bike.snu.ac.kr.struts.form.FootPageForm" />
+
+  </form-beans>
+
+  <global-exceptions />
+  <global-forwards />
+  <action-mappings >
+    <action
+      attribute="personalizedSearchForm"
+      input="/personalizedhome.jsp"
+      name="personalizedSearchForm"
+      path="/personalizedSearch"
+      scope="request"
+      type="bike.snu.ac.kr.struts.action.PersonalizedSearchAction">
+      <forward name="success" path="/personalizedSearch.jsp" />
+      <forward name="fail" path="/index.jsp" />
+    </action>
+    <action
+      attribute="anonymousSearchForm"
+      input="/anonymoushome.jsp"
+      name="anonymousSearchForm"
+      path="/anonymousSearch"
+      scope="request"
+      type="bike.snu.ac.kr.struts.action.AnonymousSearchAction">
+      <forward name="success" path="/anonymousSearch.jsp" />
+      <forward name="fail" path="/index.jsp" />
+    </action>
+    <action
+      attribute="testForm"
+      input="/test.jsp"
+      name="testForm"
+      path="/test"
+      scope="request"
+      type="bike.snu.ac.kr.struts.action.TestAction" />
+    <action
+      attribute="anonymousContinueSearchForm"
+      input="/anonymousSearch.jsp"
+      name="anonymousContinueSearchForm"
+      path="/anonymousContinueSearch"
+      scope="request"
+      type="bike.snu.ac.kr.struts.action.AnonymousContinueSearchAction">
+      <forward name="success" path="/anonymousSearch.jsp" />
+    </action>
+    <action
+      attribute="footPageForm"
+      input="/searchFooter.jsp"
+      name="footPageForm"
+      parameter="pageNum"
+      path="/footPage"
+      scope="request"
+      type="bike.snu.ac.kr.struts.action.FootPageAction">
+      <forward name="sucess" path="/anonymousSearch.jsp" />
+    </action>
+
+  </action-mappings>
+
+  <message-resources parameter="bike.snu.ac.kr.struts.ApplicationResources" />
+</struts-config>
+

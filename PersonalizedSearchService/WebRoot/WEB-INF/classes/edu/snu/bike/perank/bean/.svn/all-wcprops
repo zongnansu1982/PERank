@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/21/trunk/PersonalizedSearchService/src/bean
+END
+SessionQueryBean.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/21/trunk/PersonalizedSearchService/src/bean/SessionQueryBean.java
+END
+DoublebingBean.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/21/trunk/PersonalizedSearchService/src/bean/DoublebingBean.java
+END
+PreferenceBean.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/21/trunk/PersonalizedSearchService/src/bean/PreferenceBean.java
+END
+PredicateBean.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/21/trunk/PersonalizedSearchService/src/bean/PredicateBean.java
+END
+ProfileBean.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/21/trunk/PersonalizedSearchService/src/bean/ProfileBean.java
+END
+SessionPreferenceBean.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/21/trunk/PersonalizedSearchService/src/bean/SessionPreferenceBean.java
+END
+ParaBean.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/21/trunk/PersonalizedSearchService/src/bean/ParaBean.java
+END
+SearchBean.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/21/trunk/PersonalizedSearchService/src/bean/SearchBean.java
+END

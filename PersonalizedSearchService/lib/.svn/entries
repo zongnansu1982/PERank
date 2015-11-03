@@ -1,0 +1,57 @@
+8
+
+dir
+21
+https://nansu.googlecode.com/svn/trunk/PersonalizedSearchService/lib
+https://nansu.googlecode.com/svn
+
+
+
+2012-08-21T05:47:08.891616Z
+21
+zongnansu1982@gmail.com
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+416caa71-06ce-ba56-6730-661720d9ea17
+
+siren-qparser-0.2.2-RC2-20111111.170327-4.jar
+file
+
+
+
+
+2012-08-22T04:13:58.571924Z
+2c4df2c2cb88b6c6c1d50ecdc87d0c83
+2012-08-21T05:47:08.891616Z
+21
+zongnansu1982@gmail.com
+has-props
+
+siren-core-0.2.2-RC2-20111111.170327-4.jar
+file
+
+
+
+
+2012-08-22T04:13:58.582925Z
+eb722c21c9a7886d29afd11e7c010f3a
+2012-08-21T05:47:08.891616Z
+21
+zongnansu1982@gmail.com
+has-props
+
+lucene
+dir
+

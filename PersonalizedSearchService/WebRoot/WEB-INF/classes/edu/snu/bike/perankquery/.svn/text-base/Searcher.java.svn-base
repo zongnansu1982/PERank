@@ -1,0 +1,18 @@
+/**
+ * 
+ */
+package query;
+
+import java.util.HashMap;
+
+import bean.SearchBean;
+
+/**
+ * @author zongnansu
+ *
+ */
+public interface Searcher {
+	public HashMap<String,SearchBean> search (QueryInput input,int start,int end)throws Exception;
+	
+	public Integer getNumberOfHits(QueryInput input) throws Exception;
+}

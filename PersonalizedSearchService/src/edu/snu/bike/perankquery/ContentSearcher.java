@@ -1,0 +1,162 @@
+package edu.snu.bike.perankquery;
+
+import java.io.File;
+import java.io.IOException;
+import java.util.HashMap;
+
+import org.apache.lucene.analysis.Analyzer;
+import org.apache.lucene.analysis.TokenStream;
+import org.apache.lucene.analysis.standard.StandardAnalyzer;
+import org.apache.lucene.index.IndexReader;
+import org.apache.lucene.index.Term;
+import org.apache.lucene.search.IndexSearcher;
+import org.apache.lucene.search.Query;
+import org.apache.lucene.search.ScoreDoc;
+import org.apache.lucene.search.Scorer;
+import org.apache.lucene.search.TermQuery;
+import org.apache.lucene.search.highlight.Highlighter;
+import org.apache.lucene.search.highlight.InvalidTokenOffsetsException;
+import org.apache.lucene.search.highlight.QueryScorer;
+import org.apache.lucene.search.highlight.SimpleSpanFragmenter;
+import org.apache.lucene.search.highlight.TextFragment;
+import org.apache.lucene.search.highlight.TokenSources;
+import org.apache.lucene.search.vectorhighlight.*;
+import org.apache.lucene.store.FSDirectory;
+import org.apache.lucene.util.Version;
+import org.sindice.siren.analysis.AnyURIAnalyzer;
+import org.sindice.siren.analysis.TupleAnalyzer;
+import org.sindice.siren.analysis.AnyURIAnalyzer.URINormalisation;
+
+public class ContentSearcher {
+	
+	public HashMap<String,String> search(String query,String snippetQuery) throws IOException {
+			HashMap<String, String> snip= new HashMap<String, String>(); //<url, snippet>
+			System.out.println("Index Searching ...");
+
+			String standarquery = query.toLowerCase();
+
+			FSDirectory dir = FSDirectory.open(new File("E://PPV/SmallData/index/drugIdx/idx"));
+			IndexReader reader = IndexReader.open(dir, true);
+			IndexSearcher searcher = new IndexSearcher(dir);
+			FastVectorHighlighter highlighter = getHighlighter();
+			FieldQuery fieldQuery = highlighter.getFieldQuery(new TermQuery(new Term("content", query)));
+			ScoreDoc[] results = searcher.search(
+			ContentQueryModel.getORQueryInOneDoc(standarquery), 10).scoreDocs;
+//			System.out.println("Number of hits: " + results.length);
+			if (results.length > 0) {
+				int docID = 1;
+				for (final ScoreDoc doc : results) {
+					//only get top one
+					if(docID>1){
+						continue;
+					}
+					
+					Double score = (double) doc.score;
+					String relatedLink = searcher.doc(doc.doc).get("url").trim();
+					String content = searcher.doc(doc.doc).get("content")
+							.trim();
+					String snippet = highlighter.getBestFragment( // #H
+							fieldQuery, searcher.getIndexReader(), // #H
+							doc.doc, "content", 500 );
+					
+					snippet=snippet.replaceAll("/r/n", "<br>");
+					snippet=snippet.replaceAll("<http://", "http://");
+					snippet=snippet.replaceAll("> ", " ");
+//					System.out.println("doc score: "+ score+ " related Link: " + relatedLink +" snippet: "+snippet);
+//					System.out.println("content: "+content);
+					snip.put(relatedLink, snippet);
+					
+					docID++;
+					
+				}
+				searcher.close();
+
+			}
+//			System.out.println(snip);
+			return snip;
+		}
+
+		
+	static FastVectorHighlighter getHighlighter() {
+		FragListBuilder fragListBuilder = new SimpleFragListBuilder(); // #J
+		FragmentsBuilder fragmentBuilder = // #K
+		new ScoreOrderFragmentsBuilder( // #K
+		BaseFragmentsBuilder.COLORED_PRE_TAGS, // #K
+		BaseFragmentsBuilder.COLORED_POST_TAGS); // #K
+		return new FastVectorHighlighter(true, true, // #L
+		fragListBuilder, fragmentBuilder); // #L
+		}
+
+	
+	public HashMap<String, String> testhighlighter(String query) throws IOException, InvalidTokenOffsetsException{
+		HashMap<String, String> snip= new HashMap<String, String>(); //<url, snippet>
+		System.out.println("Index Searching ...");
+
+		String standarquery = query.toLowerCase();
+
+		FSDirectory dir = FSDirectory.open(new File("E://data/index/drugIdx/idx"));
+		IndexReader reader = IndexReader.open(dir, true);
+		IndexSearcher searcher = new IndexSearcher(dir);
+		
+		ScoreDoc[] results = searcher.search(
+		
+		ContentQueryModel.getORQueryInOneDoc(standarquery), 10).scoreDocs;
+		System.out.println("Number of hits: " + results.length);
+		
+		QueryScorer scorer= new QueryScorer(new TermQuery(new Term("content", standarquery)), "content");
+		Highlighter highlighter= new Highlighter(scorer);
+		highlighter.setTextFragmenter(
+				new SimpleSpanFragmenter(scorer));
+		Analyzer stringAnalyzer = new StandardAnalyzer(Version.LUCENE_34);
+
+		AnyURIAnalyzer anyURIAnalyzer = new AnyURIAnalyzer(Version.LUCENE_34);
+		anyURIAnalyzer.setUriNormalisation(URINormalisation.LOCALNAME);
+		
+		if (results.length > 0) {
+			int docID = 1;
+			for (final ScoreDoc doc : results) {
+				//only get top one
+				if(docID>1){
+					continue;
+				}
+				
+				Double score = (double) doc.score;
+				String relatedLink = searcher.doc(doc.doc).get("url").trim();
+				String content = searcher.doc(doc.doc).get("content")
+						.trim();
+				
+				TokenStream stream = TokenSources.getAnyTokenStream(searcher.getIndexReader(),
+						doc.doc,
+						"content",
+						searcher.doc(doc.doc),
+						new TupleAnalyzer(Version.LUCENE_34, stringAnalyzer, anyURIAnalyzer));
+				
+				String snippet =
+						highlighter.getBestFragment(stream, content);
+						
+				snippet=snippet.replaceAll("/r/n", "<br>");
+				snippet=snippet.replaceAll("<http://", "http://");
+				snippet=snippet.replaceAll("> ", " ");
+				System.out.println("doc score: "+ score+ " related Link: " + relatedLink +" snippet: "+snippet);
+//				System.out.println("content: "+content);
+				snip.put(relatedLink, snippet);
+				
+				docID++;
+				
+			}
+			searcher.close();
+
+		}
+//		System.out.println(snip);
+		return snip;
+	}
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

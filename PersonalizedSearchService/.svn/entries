@@ -1,0 +1,107 @@
+8
+
+dir
+21
+https://nansu.googlecode.com/svn/trunk/PersonalizedSearchService
+https://nansu.googlecode.com/svn
+
+
+
+2012-08-21T05:47:08.891616Z
+21
+zongnansu1982@gmail.com
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+416caa71-06ce-ba56-6730-661720d9ea17
+
+.myhibernatedata
+file
+
+
+
+
+2012-08-22T04:13:59.880999Z
+470104ef020b5ce8ff0605c4557c54ff
+2012-08-21T05:47:08.891616Z
+21
+zongnansu1982@gmail.com
+
+.classpath
+file
+
+
+
+
+2012-08-22T04:13:59.888000Z
+f7a83aa9088dc5313f132e1988a34a27
+2012-08-21T05:47:08.891616Z
+21
+zongnansu1982@gmail.com
+
+WebRoot
+dir
+
+.mystrutsdata
+file
+
+
+
+
+2012-08-22T04:13:59.894000Z
+6d7f65880ce343761c8c17f94876ba95
+2012-08-21T05:47:08.891616Z
+21
+zongnansu1982@gmail.com
+
+.mymetadata
+file
+
+
+
+
+2012-08-22T04:13:59.902001Z
+ca9a54c022fd2b7a42dd19d6252bf324
+2012-08-21T05:47:08.891616Z
+21
+zongnansu1982@gmail.com
+
+.project
+file
+
+
+
+
+2012-08-22T04:13:59.909001Z
+e3265dae986fa6ad24680a7ee1120c61
+2012-08-21T05:47:08.891616Z
+21
+zongnansu1982@gmail.com
+
+lib
+dir
+
+src
+dir
+
+.myeclipse
+dir
+
+
+
+delete
+
+.settings
+dir
+

@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/21/trunk/PersonalizedSearchService/WebRoot/WEB-INF/lib
+END
+siren-qparser-0.2.2-RC2-20111111.170327-4.jar
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/!svn/ver/21/trunk/PersonalizedSearchService/WebRoot/WEB-INF/lib/siren-qparser-0.2.2-RC2-20111111.170327-4.jar
+END
+struts.jar
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/21/trunk/PersonalizedSearchService/WebRoot/WEB-INF/lib/struts.jar
+END
+struts-legacy.jar
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/21/trunk/PersonalizedSearchService/WebRoot/WEB-INF/lib/struts-legacy.jar
+END
+commons-collections.jar
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/21/trunk/PersonalizedSearchService/WebRoot/WEB-INF/lib/commons-collections.jar
+END
+jakarta-oro.jar
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/21/trunk/PersonalizedSearchService/WebRoot/WEB-INF/lib/jakarta-oro.jar
+END
+commons-lang.jar
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/21/trunk/PersonalizedSearchService/WebRoot/WEB-INF/lib/commons-lang.jar
+END
+mysql-connector-java-5.1.18-bin.jar
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/21/trunk/PersonalizedSearchService/WebRoot/WEB-INF/lib/mysql-connector-java-5.1.18-bin.jar
+END
+commons-fileupload.jar
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/21/trunk/PersonalizedSearchService/WebRoot/WEB-INF/lib/commons-fileupload.jar
+END
+commons-validator.jar
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/21/trunk/PersonalizedSearchService/WebRoot/WEB-INF/lib/commons-validator.jar
+END
+commons-logging.jar
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/21/trunk/PersonalizedSearchService/WebRoot/WEB-INF/lib/commons-logging.jar
+END
+commons-digester.jar
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/21/trunk/PersonalizedSearchService/WebRoot/WEB-INF/lib/commons-digester.jar
+END
+commons-beanutils.jar
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/21/trunk/PersonalizedSearchService/WebRoot/WEB-INF/lib/commons-beanutils.jar
+END
+siren-core-0.2.2-RC2-20111111.170327-4.jar
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/!svn/ver/21/trunk/PersonalizedSearchService/WebRoot/WEB-INF/lib/siren-core-0.2.2-RC2-20111111.170327-4.jar
+END

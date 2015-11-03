@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/21/trunk/PersonalizedSearchService/WebRoot/WEB-INF
+END
+struts-template.tld
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/21/trunk/PersonalizedSearchService/WebRoot/WEB-INF/struts-template.tld
+END
+struts-logic.tld
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/21/trunk/PersonalizedSearchService/WebRoot/WEB-INF/struts-logic.tld
+END
+struts-tiles.tld
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/21/trunk/PersonalizedSearchService/WebRoot/WEB-INF/struts-tiles.tld
+END
+struts-nested.tld
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/21/trunk/PersonalizedSearchService/WebRoot/WEB-INF/struts-nested.tld
+END
+struts-config.xml
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/22/trunk/PersonalizedSearchService/WebRoot/WEB-INF/struts-config.xml
+END
+struts-html.tld
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/21/trunk/PersonalizedSearchService/WebRoot/WEB-INF/struts-html.tld
+END
+struts-bean.tld
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/21/trunk/PersonalizedSearchService/WebRoot/WEB-INF/struts-bean.tld
+END
+jit-yc.js
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/21/trunk/PersonalizedSearchService/WebRoot/WEB-INF/jit-yc.js
+END
+validator-rules.xml
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/21/trunk/PersonalizedSearchService/WebRoot/WEB-INF/validator-rules.xml
+END
+web.xml
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/21/trunk/PersonalizedSearchService/WebRoot/WEB-INF/web.xml
+END
+.struts-config.mex
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/22/trunk/PersonalizedSearchService/WebRoot/WEB-INF/.struts-config.mex
+END

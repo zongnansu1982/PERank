@@ -1,0 +1,143 @@
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/21/trunk/PersonalizedSearchService/src/hibernate
+END
+Topicintresttable.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/21/trunk/PersonalizedSearchService/src/hibernate/Topicintresttable.java
+END
+Linkintresttable.hbm.xml
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/21/trunk/PersonalizedSearchService/src/hibernate/Linkintresttable.hbm.xml
+END
+LinkintresttableDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/21/trunk/PersonalizedSearchService/src/hibernate/LinkintresttableDAO.java
+END
+PreferencetopicmappingId.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/21/trunk/PersonalizedSearchService/src/hibernate/PreferencetopicmappingId.java
+END
+Preferencelinkmapping.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/21/trunk/PersonalizedSearchService/src/hibernate/Preferencelinkmapping.java
+END
+Usertable.hbm.xml
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/21/trunk/PersonalizedSearchService/src/hibernate/Usertable.hbm.xml
+END
+PreferencetableDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/21/trunk/PersonalizedSearchService/src/hibernate/PreferencetableDAO.java
+END
+Preferencetable.hbm.xml
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/21/trunk/PersonalizedSearchService/src/hibernate/Preferencetable.hbm.xml
+END
+UsertableDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/21/trunk/PersonalizedSearchService/src/hibernate/UsertableDAO.java
+END
+PreferencetopicmappingDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/21/trunk/PersonalizedSearchService/src/hibernate/PreferencetopicmappingDAO.java
+END
+Preferencetopicmapping.hbm.xml
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/21/trunk/PersonalizedSearchService/src/hibernate/Preferencetopicmapping.hbm.xml
+END
+Linkintresttable.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/21/trunk/PersonalizedSearchService/src/hibernate/Linkintresttable.java
+END
+BaseHibernateDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/21/trunk/PersonalizedSearchService/src/hibernate/BaseHibernateDAO.java
+END
+Topicintresttable.hbm.xml
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/21/trunk/PersonalizedSearchService/src/hibernate/Topicintresttable.hbm.xml
+END
+TopicintresttableDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/21/trunk/PersonalizedSearchService/src/hibernate/TopicintresttableDAO.java
+END
+PreferencelinkmappingId.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/21/trunk/PersonalizedSearchService/src/hibernate/PreferencelinkmappingId.java
+END
+Usertable.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/21/trunk/PersonalizedSearchService/src/hibernate/Usertable.java
+END
+Preferencetable.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/21/trunk/PersonalizedSearchService/src/hibernate/Preferencetable.java
+END
+IBaseHibernateDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/21/trunk/PersonalizedSearchService/src/hibernate/IBaseHibernateDAO.java
+END
+Preferencetopicmapping.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/21/trunk/PersonalizedSearchService/src/hibernate/Preferencetopicmapping.java
+END
+PreferencelinkmappingDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/21/trunk/PersonalizedSearchService/src/hibernate/PreferencelinkmappingDAO.java
+END
+Preferencelinkmapping.hbm.xml
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/21/trunk/PersonalizedSearchService/src/hibernate/Preferencelinkmapping.hbm.xml
+END
+HibernateSessionFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/21/trunk/PersonalizedSearchService/src/hibernate/HibernateSessionFactory.java
+END
