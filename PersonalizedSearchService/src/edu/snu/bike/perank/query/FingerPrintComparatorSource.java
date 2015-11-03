@@ -6,15 +6,8 @@ import java.util.HashMap;
 import java.util.Map.Entry;
 
 import org.apache.lucene.index.IndexReader;  
-import org.apache.lucene.index.Term;  
-import org.apache.lucene.index.TermDocs;  
-import org.apache.lucene.index.TermEnum;  
-import org.apache.lucene.search.FieldCache;
 import org.apache.lucene.search.FieldComparator;
-import org.apache.lucene.search.FieldComparatorSource;
-import org.apache.lucene.search.ScoreDoc;  
-import org.apache.lucene.search.Scorer;  
-import org.apache.lucene.search.SortField; 
+import org.apache.lucene.search.FieldComparatorSource; 
 
 
 public class FingerPrintComparatorSource extends FieldComparatorSource {

@@ -1,9 +1,5 @@
 package edu.snu.bike.perank.hibernate;
 
-import org.hibernate.HibernateException;
-import org.hibernate.Session;
-import org.hibernate.cfg.Configuration;
-
 /**
  * Configures and provides access to Hibernate sessions, tied to the
  * current thread of execution.  Follows the Thread Local Session

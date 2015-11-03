@@ -9,9 +9,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map.Entry;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
 import org.apache.lucene.queryParser.ParseException;
 import org.apache.struts.action.Action;
 import org.apache.struts.action.ActionForm;

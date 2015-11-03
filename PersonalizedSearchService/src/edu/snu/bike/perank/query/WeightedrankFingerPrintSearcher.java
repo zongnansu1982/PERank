@@ -10,7 +10,6 @@ import java.util.Map;
 import java.util.Set;
 import java.util.Map.Entry;
 
-import org.apache.lucene.document.Field;
 import org.apache.lucene.index.IndexReader;
 import org.apache.lucene.index.MultiReader;
 import org.apache.lucene.queryParser.ParseException;
@@ -22,8 +21,6 @@ import org.apache.lucene.search.SortField;
 import org.apache.lucene.store.FSDirectory;
 
 import edu.snu.bike.perank.bean.SearchBean;
-
-import org.apache.lucene.search.function.*;
 
 public class WeightedrankFingerPrintSearcher {
 
@@ -462,7 +459,8 @@ public class WeightedrankFingerPrintSearcher {
 		       Map.Entry<String,SearchBean>[] entries = (Map.Entry<String,SearchBean>[]) set.toArray(new Map.Entry[set  
 		               .size()]);  
 		       Arrays.sort(entries, new Comparator() {  
-		           public int compare(Object arg0, Object arg1) {  
+		           @Override
+				public int compare(Object arg0, Object arg1) {  
 		               Double key1 = ((Map.Entry<String,SearchBean>) arg0).getValue().getLocalizedFingerPrint();  
 		               Double key2 = ((Map.Entry<String,SearchBean>) arg1).getValue().getLocalizedFingerPrint();  
 		               return key2.compareTo(key1);  

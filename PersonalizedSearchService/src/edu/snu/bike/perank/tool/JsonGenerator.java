@@ -1,8 +1,6 @@
 package edu.snu.bike.perank.tool;
-import java.*;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Map.Entry;
 

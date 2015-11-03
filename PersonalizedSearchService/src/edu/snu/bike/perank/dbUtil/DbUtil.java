@@ -5,49 +5,47 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Set;
 
-import org.hibernate.Transaction;
-
 import edu.snu.bike.perank.bean.ProfileBean;
-import edu.snu.bike.perank.hibernate.Linkintresttable;
-import edu.snu.bike.perank.hibernate.LinkintresttableDAO;
-import edu.snu.bike.perank.hibernate.Preferencelinkmapping;
-import edu.snu.bike.perank.hibernate.PreferencelinkmappingDAO;
-import edu.snu.bike.perank.hibernate.PreferencelinkmappingId;
-import edu.snu.bike.perank.hibernate.Preferencetable;
-import edu.snu.bike.perank.hibernate.PreferencetableDAO;
-import edu.snu.bike.perank.hibernate.Preferencetopicmapping;
-import edu.snu.bike.perank.hibernate.PreferencetopicmappingDAO;
-import edu.snu.bike.perank.hibernate.PreferencetopicmappingId;
-import edu.snu.bike.perank.hibernate.Topicintresttable;
-import edu.snu.bike.perank.hibernate.TopicintresttableDAO;
-import edu.snu.bike.perank.hibernate.Usertable;
-import edu.snu.bike.perank.hibernate.UsertableDAO;
+import edu.snu.bike.perank.hibernate.LinkInterestTable;
+import edu.snu.bike.perank.hibernate.LinkInterestTableDAO;
+import edu.snu.bike.perank.hibernate.PreferenceLinkMapping;
+import edu.snu.bike.perank.hibernate.PreferenceLinkMappingDAO;
+import edu.snu.bike.perank.hibernate.PreferenceLinkMappingId;
+import edu.snu.bike.perank.hibernate.PreferenceTable;
+import edu.snu.bike.perank.hibernate.PreferenceTableDAO;
+import edu.snu.bike.perank.hibernate.PreferenceTopicMapping;
+import edu.snu.bike.perank.hibernate.PreferenceTopicMappingDAO;
+import edu.snu.bike.perank.hibernate.PreferenceTopicMappingId;
+import edu.snu.bike.perank.hibernate.TopicInterestTable;
+import edu.snu.bike.perank.hibernate.TopicInterestTableDAO;
+import edu.snu.bike.perank.hibernate.UserTable;
+import edu.snu.bike.perank.hibernate.UserTableDAO;
 
 public class DbUtil {
 
 	public ProfileBean getProfile(String name) {
 		System.out.println("name: " + name);
 		ProfileBean bean = new ProfileBean();
-		PreferencetableDAO preference = new PreferencetableDAO();
-		List<Preferencetable> plist = preference.findAll();
+		PreferenceTableDAO preference = new PreferenceTableDAO();
+		List<PreferenceTable> plist = preference.findAll();
 		ArrayList<String> topics = new ArrayList<String>();
 		ArrayList<String> links = new ArrayList<String>();
-		for (Preferencetable row : plist) {
+		for (PreferenceTable row : plist) {
 			System.out
 					.println(row.getId() + " " + row.getUsertable().getName());
 			if (row.getUsertable().getName().equals(name)) {
-				Set<Preferencelinkmapping> lset = row
+				Set<PreferenceLinkMapping> lset = row
 						.getPreferencelinkmappings();
-				for (Preferencelinkmapping mapping : lset) {
+				for (PreferenceLinkMapping mapping : lset) {
 					if (mapping.getId().getPreferencetable().getUsertable()
 							.getName().equals(name)) {
 						links.add(mapping.getId().getLinkintresttable()
 								.getLink());
 					}
 				}
-				Set<Preferencetopicmapping> tset = row
+				Set<PreferenceTopicMapping> tset = row
 						.getPreferencetopicmappings();
-				for (Preferencetopicmapping mapping : tset) {
+				for (PreferenceTopicMapping mapping : tset) {
 					if (mapping.getId().getPreferencetable().getUsertable()
 							.getName().equals(name)) {
 						topics.add(mapping.getId().getTopicintresttable()
@@ -68,13 +66,13 @@ public class DbUtil {
 	public void insert(String name, Object[] topics, Object[] links) {
 		ArrayList<String> ts = transfer(topics);
 		ArrayList<String> ls = transfer(links);
-
+ 
 		for (Object topic : topics) {
 			try {
-				if (!new TopicintresttableDAO().topicExsit(topic.toString())) {
-					Topicintresttable t = new Topicintresttable();
+				if (!new TopicInterestTableDAO().topicExsit(topic.toString())) {
+					TopicInterestTable t = new TopicInterestTable();
 					t.setTopic(topic.toString());
-					TopicintresttableDAO tdao = new TopicintresttableDAO();
+					TopicInterestTableDAO tdao = new TopicInterestTableDAO();
 					tdao.save(t);
 					tdao.getSession().beginTransaction().commit();
 				} else {
@@ -88,10 +86,10 @@ public class DbUtil {
 
 		for (Object link : links) {
 			try {
-				if (!new LinkintresttableDAO().linkExsit(link.toString())) {
-					Linkintresttable l = new Linkintresttable();
+				if (!new LinkInterestTableDAO().linkExsit(link.toString())) {
+					LinkInterestTable l = new LinkInterestTable();
 					l.setLink(link.toString());
-					LinkintresttableDAO ldao = new LinkintresttableDAO();
+					LinkInterestTableDAO ldao = new LinkInterestTableDAO();
 					ldao.save(l);
 					ldao.getSession().beginTransaction().commit();
 				} else {
@@ -103,10 +101,10 @@ public class DbUtil {
 			}
 		}
 
-		UsertableDAO udao = new UsertableDAO();
-		Usertable user = new Usertable();
+		UserTableDAO udao = new UserTableDAO();
+		UserTable user = new UserTable();
 		try {
-			if (!new UsertableDAO().userExsit(name)) {
+			if (!new UserTableDAO().userExsit(name)) {
 				user.setName(name);
 				udao.save(user);
 				udao.getSession().beginTransaction().commit();
@@ -118,27 +116,27 @@ public class DbUtil {
 			System.out.println("repeat user: " + name);
 		}
 
-		udao = new UsertableDAO();
-		List<Usertable> ulist = udao.findByName(name);
-		user = new Usertable();
-		for (Usertable utable : ulist) {
+		udao = new UserTableDAO();
+		List<UserTable> ulist = udao.findByName(name);
+		user = new UserTable();
+		for (UserTable utable : ulist) {
 			System.out.println(utable.getId() + " " + utable.getName());
 			user = utable;
 		}
 
-		Preferencetable p = new Preferencetable();
+		PreferenceTable p = new PreferenceTable();
 		p.setUsertable(user);
-		PreferencetableDAO pdao = new PreferencetableDAO();
+		PreferenceTableDAO pdao = new PreferenceTableDAO();
 		pdao.save(p);
 		pdao.getSession().beginTransaction().commit();
 
-		TopicintresttableDAO ttao = new TopicintresttableDAO();
-		List<Topicintresttable> tlist = ttao.findAll();
-		for (Topicintresttable ttable : tlist) {
+		TopicInterestTableDAO ttao = new TopicInterestTableDAO();
+		List<TopicInterestTable> tlist = ttao.findAll();
+		for (TopicInterestTable ttable : tlist) {
 			if (ts.contains(ttable.getTopic())) {
-				PreferencetopicmappingDAO tmappingdao = new PreferencetopicmappingDAO();
-				Preferencetopicmapping tmapping = new Preferencetopicmapping();
-				PreferencetopicmappingId tid = new PreferencetopicmappingId();
+				PreferenceTopicMappingDAO tmappingdao = new PreferenceTopicMappingDAO();
+				PreferenceTopicMapping tmapping = new PreferenceTopicMapping();
+				PreferenceTopicMappingId tid = new PreferenceTopicMappingId();
 				tid.setPreferencetable(p);
 				tid.setTopicintresttable(ttable);
 				tmapping.setId(tid);
@@ -147,14 +145,14 @@ public class DbUtil {
 			}
 		}
 
-		LinkintresttableDAO ldao = new LinkintresttableDAO();
-		List<Linkintresttable> llist = ldao.findAll();
-		for (Linkintresttable ltable : llist) {
+		LinkInterestTableDAO ldao = new LinkInterestTableDAO();
+		List<LinkInterestTable> llist = ldao.findAll();
+		for (LinkInterestTable ltable : llist) {
 			if (ls.contains(ltable.getLink())) {
-				PreferencelinkmappingDAO lmappingdao = new PreferencelinkmappingDAO();
-				Preferencelinkmapping lmapping = new Preferencelinkmapping();
+				PreferenceLinkMappingDAO lmappingdao = new PreferenceLinkMappingDAO();
+				PreferenceLinkMapping lmapping = new PreferenceLinkMapping();
 
-				PreferencelinkmappingId lid = new PreferencelinkmappingId();
+				PreferenceLinkMappingId lid = new PreferenceLinkMappingId();
 				lid.setPreferencetable(p);
 				lid.setLinkintresttable(ltable);
 				lmapping.setId(lid);

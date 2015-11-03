@@ -1,0 +1,153 @@
+package edu.snu.bike.perank.hibernate;
+
+import java.util.List;
+import java.util.Set;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+
+/**
+ * Data access object (DAO) for domain model class Topicintresttable.
+ * 
+ * @see edu.snu.bike.perank.hibernate.TopicInterestTable
+ * @author MyEclipse Persistence Tools
+ */
+
+public class TopicInterestTableDAO extends BaseHibernateDAO {
+	private static final Log log = LogFactory
+			.getLog(TopicInterestTableDAO.class);
+
+	// property constants
+	public static final String TOPIC = "topic";
+
+	public void save(TopicInterestTable transientInstance) {
+		log.debug("saving Topicintresttable instance");
+		try {
+			getSession().save(transientInstance);
+			log.debug("save successful");
+//			  getSession().beginTransaction().commit();
+		} catch (RuntimeException re) {
+			log.error("save failed", re);
+			throw re;
+		}
+	}
+	public boolean topicExsit(String topic) {
+		log.debug("topic exsit check");
+		try {
+			boolean re=true;
+			List record=findByTopic(topic);
+			if(record.size()==0){
+				re=false;
+			}
+			log.debug("topic exsit: "+re);
+			return re;
+//			  getSession().beginTransaction().commit();
+		} catch (RuntimeException re) {
+			log.error("save failed", re);
+			throw re;
+		}
+	}
+
+	public void delete(TopicInterestTable persistentInstance) {
+		log.debug("deleting Topicintresttable instance");
+		try {
+			getSession().delete(persistentInstance);
+			log.debug("delete successful");
+		} catch (RuntimeException re) {
+			log.error("delete failed", re);
+			throw re;
+		}
+	}
+
+	public TopicInterestTable findById(java.lang.Integer id) {
+		log.debug("getting Topicintresttable instance with id: " + id);
+		try {
+			TopicInterestTable instance = (TopicInterestTable) getSession().get(
+					"hibernate.Topicintresttable", id);
+			return instance;
+		} catch (RuntimeException re) {
+			log.error("get failed", re);
+			throw re;
+		}
+	}
+
+	public List findByExample(TopicInterestTable instance) {
+		log.debug("finding Topicintresttable instance by example");
+		try {
+			List results = getSession().createCriteria(
+					"hibernate.Topicintresttable")
+					.add(Example.create(instance)).list();
+			log.debug("find by example successful, result size: "
+					+ results.size());
+			return results;
+		} catch (RuntimeException re) {
+			log.error("find by example failed", re);
+			throw re;
+		}
+	}
+
+	public List findByProperty(String propertyName, Object value) {
+		log.debug("finding Topicintresttable instance with property: "
+				+ propertyName + ", value: " + value);
+		try {
+			String queryString = "from Topicintresttable as model where model."
+					+ propertyName + "= ?";
+			Query queryObject = getSession().createQuery(queryString);
+			queryObject.setParameter(0, value);
+			return queryObject.list();
+		} catch (RuntimeException re) {
+			log.error("find by property name failed", re);
+			throw re;
+		}
+	}
+
+	public List findByTopic(Object topic) {
+		return findByProperty(TOPIC, topic);
+	}
+
+	public List findAll() {
+		log.debug("finding all Topicintresttable instances");
+		try {
+			String queryString = "from Topicintresttable";
+			Query queryObject = getSession().createQuery(queryString);
+			return queryObject.list();
+		} catch (RuntimeException re) {
+			log.error("find all failed", re);
+			throw re;
+		}
+	}
+
+	public TopicInterestTable merge(TopicInterestTable detachedInstance) {
+		log.debug("merging Topicintresttable instance");
+		try {
+			TopicInterestTable result = (TopicInterestTable) getSession().merge(
+					detachedInstance);
+			log.debug("merge successful");
+			return result;
+		} catch (RuntimeException re) {
+			log.error("merge failed", re);
+			throw re;
+		}
+	}
+
+	public void attachDirty(TopicInterestTable instance) {
+		log.debug("attaching dirty Topicintresttable instance");
+		try {
+			getSession().saveOrUpdate(instance);
+			log.debug("attach successful");
+		} catch (RuntimeException re) {
+			log.error("attach failed", re);
+			throw re;
+		}
+	}
+
+	public void attachClean(TopicInterestTable instance) {
+		log.debug("attaching clean Topicintresttable instance");
+		try {
+			getSession().lock(instance, LockMode.NONE);
+			log.debug("attach successful");
+		} catch (RuntimeException re) {
+			log.error("attach failed", re);
+			throw re;
+		}
+	}
+}

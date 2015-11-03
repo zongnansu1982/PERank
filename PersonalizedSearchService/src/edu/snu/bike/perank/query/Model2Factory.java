@@ -4,7 +4,6 @@ import java.io.File;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.Map.Entry;
@@ -25,6 +24,7 @@ private String index;
 		
 	}
 
+@Override
 public Integer getNumberOfHits(QueryInput input) throws Exception {
 	// TODO Auto-generated method stub
 	int total=0;
@@ -99,6 +99,7 @@ public Integer getNumberOfHits(QueryInput input) throws Exception {
 	return total;
 }
 
+@Override
 public HashMap<String, SearchBean> search(QueryInput input, int start, int end) throws Exception {
 	// TODO Auto-generated method stub
 	System.out.println("Preference Search Use Default Weights start...");
@@ -199,7 +200,8 @@ public static Map.Entry<String,SearchBean>[] getSortedHashtableByValueGeneral(Ma
        Map.Entry<String,SearchBean>[] entries = (Map.Entry<String,SearchBean>[]) set.toArray(new Map.Entry[set  
                .size()]);  
        Arrays.sort(entries, new Comparator() {  
-           public int compare(Object arg0, Object arg1) {  
+           @Override
+		public int compare(Object arg0, Object arg1) {  
                Double key1 = ((Map.Entry<String,SearchBean>) arg0).getValue().getLocalizedFingerPrint();  
                Double key2 = ((Map.Entry<String,SearchBean>) arg1).getValue().getLocalizedFingerPrint();  
                return key2.compareTo(key1);  

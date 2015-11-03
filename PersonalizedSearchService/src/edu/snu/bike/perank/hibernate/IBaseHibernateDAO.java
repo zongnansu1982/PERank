@@ -1,7 +1,5 @@
 package edu.snu.bike.perank.hibernate;
 
-import org.hibernate.Session;
-
 
 /**
  * Data access interface for domain model
