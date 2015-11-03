@@ -1,4 +1,4 @@
-package edu.snu.bike.perankquery;
+package edu.snu.bike.perank.query;
 
 public class SimpleQueryFactory {
 	public static String QUERYWITHOUTPREFERENCE="model1";

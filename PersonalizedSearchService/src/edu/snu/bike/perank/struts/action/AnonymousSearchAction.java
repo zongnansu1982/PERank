@@ -21,13 +21,13 @@ import org.apache.struts.action.ActionMapping;
 import org.apache.struts.taglib.template.util.Content;
 
 import edu.snu.bike.perank.bean.SearchBean;
+import edu.snu.bike.perank.query.AbstractQueryModelSupport;
+import edu.snu.bike.perank.query.ContentSearcher;
+import edu.snu.bike.perank.query.Model3Factory;
+import edu.snu.bike.perank.query.QueryInput;
+import edu.snu.bike.perank.query.WeightedrankFingerPrintSearcher;
 import edu.snu.bike.perank.struts.form.AnonymousSearchForm;
 import edu.snu.bike.perank.tool.*;
-import edu.snu.bike.perankquery.AbstractQueryModelSupport;
-import edu.snu.bike.perankquery.ContentSearcher;
-import edu.snu.bike.perankquery.Model3Factory;
-import edu.snu.bike.perankquery.QueryInput;
-import edu.snu.bike.perankquery.WeightedrankFingerPrintSearcher;
 
 /**
  * MyEclipse Struts Creation date: 07-04-2012

@@ -19,11 +19,11 @@ import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 
 import edu.snu.bike.perank.bean.SearchBean;
+import edu.snu.bike.perank.query.ContentSearcher;
+import edu.snu.bike.perank.query.WeightedrankFingerPrintSearcher;
 import edu.snu.bike.perank.struts.form.AnonymousSearchForm;
 import edu.snu.bike.perank.struts.form.FootPageForm;
 import edu.snu.bike.perank.tool.pagesSpliter;
-import edu.snu.bike.perankquery.ContentSearcher;
-import edu.snu.bike.perankquery.WeightedrankFingerPrintSearcher;
 
 /** 
  * MyEclipse Struts
